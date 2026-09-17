@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+int main() {
+    int opcao;
+    float saldo = 0.0, deposito;
+
+    do {
+        printf("\nMENU BANCO\n");
+        printf("1. Ver Saldo\n");
+        printf("2. Fazer Depósito\n");
+        printf("3. Sair\n");
+        printf("Escolha uma opção: ");
+        scanf("%d", &opcao);
+
+        switch (opcao) {
+            case 1:
+                printf("\nseu saldo atual é: R$ %.2f\n", saldo);
+                break;
+            case 2:
+                printf("\ndigite o valor do depósito: R$ ");
+                scanf("%f", &deposito);
+                if (deposito > 0) {
+                    saldo += deposito;
+                    printf("depósito realizado com sucesso!\n");
+                } else {
+                    printf("valor inválido para depósito.\n");
+                }
+                break;
+            case 3:
+                printf("\nsaindo do sistema... até logo!\n");
+                break;
+            default:
+                printf("\nopção inválida! tente novamente.\n");
+        }
+
+    } while (opcao != 3);
+
+    return 0;
+}
