@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char senha[20];
+
+    printf("digite a senha: ");
+    scanf("%s", senha);
+
+    while (strcmp(senha, "1234") != 0) {
+        printf("senha incorreta! tente novamente.\n");
+        printf("digite a senha: ");
+        scanf("%s", senha);
+    }
+
+    printf("acesso permitido!\n");
+
+    return 0;
+}
